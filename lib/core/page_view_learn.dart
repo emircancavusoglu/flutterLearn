@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterprojemm/const/string_consts.dart';
 
 class PageViewLearn extends StatefulWidget {
   PageViewLearn({Key? key, required this.message}) : super(key: key);
@@ -22,7 +23,7 @@ class _PageViewLearnState extends State<PageViewLearn> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Learn App"),
+        title: Text(StringConst.title),
       ),
       body: Stack(
         children: [

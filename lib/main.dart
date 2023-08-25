@@ -3,7 +3,7 @@ import 'package:flutterprojemm/const/string_consts.dart';
 import 'package:flutterprojemm/core/life_cycle.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/product/customButton.dart';
-import 'package:flutterprojemm/product/text_field_learn.dart';
+import 'package:flutterprojemm/core/text_field_learn.dart';
 
 void main() => runApp( MyApp());
 

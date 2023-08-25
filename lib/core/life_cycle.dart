@@ -14,8 +14,12 @@ class _LifeCycleState extends State<LifeCycle> {
   @override
   void initState() {
     super.initState();
-    _name = widget.name;
+    assignName();
 
+  }
+
+  void assignName() {
+    _name = widget.name;
   }
   @override
   Widget build(BuildContext context) {
