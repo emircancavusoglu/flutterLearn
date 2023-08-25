@@ -12,7 +12,7 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
-   return BottomNavigationBar(onTap: (value){
+   return BottomNavigationBar(onTap: (int value){
      if(value == Labels.newPage.index){
        Navigator.push(context, MaterialPageRoute(builder: (context) => LifeCycle(name: "EMİRCAN"),));
      }
