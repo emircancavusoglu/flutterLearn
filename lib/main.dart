@@ -1,4 +1,5 @@
 import'package:flutter/material.dart';
+import 'package:flutterprojemm/const/string_consts.dart';
 import 'package:flutterprojemm/core/life_cycle.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/product/customButton.dart';
@@ -65,17 +66,29 @@ class _MainScreenState extends State<MainScreen> {
           ),
           const SizedBox(height: 20,),
           ElevatedButton(onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  PageViewLearn(message: '',),));
+            navigateToPageView(context);
           }, child: const Text("Yeni Sayfaya Geç")),
            ElevatedButton(onPressed: (){
-             Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  LifeCycle(name: 'Emircan',),));
-           }, child: const Text("LifeCycle")),
+             navigateToLifeCycle(context);
+           }, child: Text(StringConst.lifeCyle)),
            ElevatedButton(onPressed: (){
-             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TextFieldLearn(),));
-           }, child: const Text("TextField Learn"))
+             navigateToTextField(context);
+           }, child: Text(StringConst.textField))
         ],
       ),
 
     );
+  }
+
+  void navigateToPageView(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  PageViewLearn(message: '',),));
+  }
+
+  void navigateToLifeCycle(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  LifeCycle(name: 'Emircan',),));
+  }
+
+  void navigateToTextField(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TextFieldLearn(),));
   }
 }
