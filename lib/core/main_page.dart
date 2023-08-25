@@ -42,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
         )],
       ),
       body: Container(
-        color: Colors.indigoAccent,
+        color: widget.color1,
         width: double.infinity,
         height: double.infinity,
         child: Column(
