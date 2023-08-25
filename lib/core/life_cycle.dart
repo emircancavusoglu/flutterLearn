@@ -35,7 +35,7 @@ class _LifeCycleState extends State<LifeCycle> {
               _name = newName;
             });
 
-          }, child: const Text("Chane this message")),
+          }, child: const Text("Change this message")),
         ],
       ),
     );

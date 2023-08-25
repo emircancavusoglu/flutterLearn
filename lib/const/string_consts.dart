@@ -1,5 +1,5 @@
 class StringConst{
-  static String title = "TextField Learn";
+  static String pageViewTitle = " PageView";
   static String lifeCyle = "LifeCycle";
   static String textField = "TextField Learn";
 

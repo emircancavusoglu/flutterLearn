@@ -23,7 +23,7 @@ class _PageViewLearnState extends State<PageViewLearn> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(StringConst.title),
+        title: Text(StringConst.pageViewTitle),
       ),
       body: Stack(
         children: [
