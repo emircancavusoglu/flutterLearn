@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import 'package:flutterprojemm/main.dart';
@@ -62,10 +63,10 @@ class _MainScreenState extends State<MainScreen> {
           }, child: Text(StringConst.lifeCyle)),
           ElevatedButton(onPressed: (){
             navigateToTextField(context);
-          }, child: Text(StringConst.textField))
+          }, child: Text(StringConst.textField)),
         ],
       ),
-
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 
