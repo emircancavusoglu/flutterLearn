@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterprojemm/const/colors.dart';
 
 
 class ListViewLearn extends StatefulWidget {
@@ -39,7 +40,17 @@ class _ListViewLearnState extends State<ListViewLearn> {
                Container(
                  width: 20,
                  height: 20,
-                 color: Colors.purple,
+                 color: MyColors.purple,
+               ),
+               Container(
+                 width: 20,
+                 height: 20,
+                 color: MyColors.redAccent,
+               ),
+               Container(
+                 width: 20,
+                 height: 20,
+                 color: MyColors.purple,
                )
              ],
            ),
