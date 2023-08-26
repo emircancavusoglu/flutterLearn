@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
 import 'package:flutterprojemm/core/list_view.dart';
+import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import '../const/string_consts.dart';
@@ -69,11 +70,18 @@ class _MainScreenState extends State<MainScreen> {
             ElevatedButton(onPressed: (){
               navigateToListView(context);
             }, child: Text(StringConst.listView)),
+            ElevatedButton(onPressed: (){
+              navigateToListViewBuilder(context);
+            }, child: Text(StringConst.listViewBuilder)),
           ],
         ),
       ),
       bottomNavigationBar: const BottomNavigation(),
     );
+  }
+
+  void navigateToListViewBuilder(BuildContext context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const ListViewBuilderLearn(),));
   }
 
   void navigateToListView(BuildContext context) {
