@@ -15,8 +15,22 @@ class _ListViewLearnState extends State<ListViewLearn> {
       appBar: AppBar(),
       body: ListView(
         children: [
-          Text("ListView Learn",
-            style: Theme.of(context).textTheme.displayLarge,)
+          FittedBox(
+            child: Text("ListView Learn",
+              style: Theme.of(context).textTheme.displayMedium,),
+          ),
+          const Divider(),
+          Container(
+            height: 100,
+            width: 50,
+            color: Colors.green,
+          ),
+          const Divider(),
+          Container(
+            height: 200,
+            width: 50,
+            color: Colors.limeAccent,
+          )
         ],
       ),
 
