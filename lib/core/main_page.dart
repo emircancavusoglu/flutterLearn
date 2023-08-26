@@ -21,13 +21,11 @@ class _MainScreenState extends State<MainScreen> {
   void update(bool isIncrement){
     if(isIncrement){
       setState(() {
-        print("basıldı");
         ++counter;
       });
     }
     else{
       setState(() {
-        print("basıldı");
         --counter;
       });
     }
