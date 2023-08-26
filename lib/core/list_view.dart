@@ -23,14 +23,27 @@ class _ListViewLearnState extends State<ListViewLearn> {
           Container(
             height: 100,
             width: 50,
-            color: Colors.green,
+            color: Colors.redAccent,
           ),
           const Divider(),
           Container(
             height: 200,
             width: 50,
             color: Colors.limeAccent,
-          )
+          ),
+         SizedBox(
+           height: 300,
+           child: ListView(
+             scrollDirection: Axis.horizontal,
+             children: [
+               Container(
+                 width: 20,
+                 height: 20,
+                 color: Colors.purple,
+               )
+             ],
+           ),
+         )
         ],
       ),
 
