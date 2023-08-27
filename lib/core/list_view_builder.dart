@@ -14,7 +14,14 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView.builder(itemBuilder: (context, index) {
-        return Image.network('https://picsum.photos/200');
+        return Column(
+          children: [
+            const Placeholder(
+              color: Colors.black,
+            ),
+            Text("$index"),
+          ],
+        );
       },),
     );
   }
