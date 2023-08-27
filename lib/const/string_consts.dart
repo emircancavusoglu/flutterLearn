@@ -1,7 +1,7 @@
 class StringConst{
-  static String pageViewTitle = " PageView";
-  static String lifeCyle = "LifeCycle";
-  static String textField = "TextField Learn";
-  static String listView = "ListView";
-  static String listViewBuilder = "listView Builder";
+  final String pageViewTitle = " PageView";
+  final String lifeCyle = "LifeCycle";
+  final String textField = "TextField Learn";
+  final String listView = "ListView";
+  final String listViewBuilder = "listView Builder";
 }

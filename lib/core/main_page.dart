@@ -63,16 +63,16 @@ class _MainScreenState extends State<MainScreen> {
             }, child: const Text("Yeni Sayfaya Geç")),
             ElevatedButton(onPressed: (){
               navigateToLifeCycle(context);
-            }, child: Text(StringConst.lifeCyle)),
+            }, child: Text(StringConst().lifeCyle)),
             ElevatedButton(onPressed: (){
               navigateToTextField(context);
-            }, child: Text(StringConst.textField)),
+            }, child: Text(StringConst().textField)),
             ElevatedButton(onPressed: (){
               navigateToListView(context);
-            }, child: Text(StringConst.listView)),
+            }, child: Text(StringConst().listView)),
             ElevatedButton(onPressed: (){
               navigateToListViewBuilder(context);
-            }, child: Text(StringConst.listViewBuilder)),
+            }, child: Text(StringConst().listViewBuilder)),
           ],
         ),
       ),
