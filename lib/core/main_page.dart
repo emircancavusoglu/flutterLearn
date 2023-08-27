@@ -73,11 +73,18 @@ class _MainScreenState extends State<MainScreen> {
             ElevatedButton(onPressed: (){
               navigateToListViewBuilder(context);
             }, child: Text(StringConst().listViewBuilder)),
+            ElevatedButton(onPressed: (){
+              navigateToListSeperated(context);
+            }, child: Text(StringConst().listViewSeperated)),
           ],
         ),
       ),
       bottomNavigationBar: const BottomNavigation(),
     );
+  }
+
+  void navigateToListSeperated(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewSeperated(),));
   }
 
   void navigateToListViewBuilder(BuildContext context) {
@@ -101,4 +108,5 @@ class _MainScreenState extends State<MainScreen> {
   void navigateToTextField(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TextFieldLearn(),));
   }
+
 }
