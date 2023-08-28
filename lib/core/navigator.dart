@@ -9,7 +9,7 @@ class NavigatorView extends StatefulWidget {
   State<NavigatorView> createState() => _NavigatorViewState();
 }
 
-class _NavigatorViewState extends State<NavigatorView> {
+class _NavigatorViewState extends State<NavigatorView> with NavigatorManager {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class _NavigatorViewState extends State<NavigatorView> {
               children: [
                 Center(
                   child: IconButton(onPressed: (){
-                    NavigatorManager.navigateToWidget(context, const ListViewLearn());
+                    navigateToWidget(context,const ListViewLearn());
                   }, icon: const Icon(Icons.chevron_right_outlined)),
                 )
               ],
@@ -38,8 +38,8 @@ class _NavigatorViewState extends State<NavigatorView> {
     );
   }
 }
-class NavigatorManager{
-  static void navigateToWidget(BuildContext context, Widget widget){
+mixin NavigatorManager{
+  void navigateToWidget(BuildContext context, Widget widget){
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return widget;
     },));
