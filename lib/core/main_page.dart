@@ -7,6 +7,7 @@ import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import '../const/strings.dart';
 import '../product/customButton.dart';
+import 'example_design.dart';
 import 'life_cycle.dart';
 
 class MainScreen extends StatefulWidget {
@@ -80,7 +81,10 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const NavigatorView());
               // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
-            }, child: const Text("Navigator"))
+            }, child: const Text("Navigator")),
+            ElevatedButton(onPressed: (){
+              navigateToWidget(context, const ExampleApp());
+            }, child: const Text("Example Design"))
           ],
         ),
       ),

@@ -13,14 +13,32 @@ class ExampleApp extends StatelessWidget {
         ],
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Card(
-
+          Container(
+            width: double.infinity,
+            height: 500,
+            color: Colors.limeAccent,
+            child: Card(
+              margin: const EdgeInsets.all(100),
+              child: Image.asset('assets/book.png'),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FloatingActionButton(onPressed: (){},
+                backgroundColor: Colors.white,
+                child: const Icon(Icons.audiotrack_sharp,color: Colors.grey,),),
+              FloatingActionButton(onPressed: (){},
+                backgroundColor: Colors.white,
+                child: const Icon(Icons.bluetooth_audio,color: Colors.grey,),),
+              FloatingActionButton(onPressed: (){},
+                backgroundColor: Colors.white,
+                child: const Icon(Icons.autorenew_sharp,color: Colors.grey,),)
+            ],
           )
         ],
-      ),
+      )
     );
   }
 }
