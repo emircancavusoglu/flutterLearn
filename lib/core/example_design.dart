@@ -9,7 +9,10 @@ class ExampleApp extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(Icons.chevron_left),
         actions: const [
-          Icon(Icons.more_horiz),
+          Padding(
+            padding: EdgeInsets.only(right: 7),
+            child: Icon(Icons.more_horiz),
+          ),
         ],
       ),
       body: Column(
