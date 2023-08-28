@@ -18,7 +18,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> with NavigatorManager{
   // CustomButton custom = const CustomButton();
   int counter = 0;
   void update(bool isIncrement){
@@ -60,25 +60,26 @@ class _MainScreenState extends State<MainScreen> {
             ),
             const SizedBox(height: 20,),
             ElevatedButton(onPressed: (){
-              navigateToPageView(context);
+              navigateToWidget(context, PageViewLearn(message: "PageViewExample"));
             }, child: const Text("Yeni Sayfaya Geç")),
             ElevatedButton(onPressed: (){
-              navigateToLifeCycle(context);
+              navigateToWidget(context, LifeCycle(name: "Emircan"));
             }, child: Text(StringConst().lifeCyle)),
             ElevatedButton(onPressed: (){
-              navigateToTextField(context);
+              navigateToWidget(context, const TextFieldLearn());
             }, child: Text(StringConst().textField)),
             ElevatedButton(onPressed: (){
-              navigateToListView(context);
+              navigateToWidget(context, const ListViewLearn());
             }, child: Text(StringConst().listView)),
             ElevatedButton(onPressed: (){
-              navigateToListViewBuilder(context);
+              navigateToWidget(context, const ListViewBuilderLearn());
             }, child: Text(StringConst().listViewBuilder)),
             ElevatedButton(onPressed: (){
-              navigateToListSeperated(context);
-            }, child: Text(StringConst().listViewSeperated)),
+              navigateToWidget(context, const ListViewSeperated());
+              }, child: Text(StringConst().listViewSeperated)),
             ElevatedButton(onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
+              navigateToWidget(context, const NavigatorView());
+              // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
             }, child: const Text("Navigator"))
           ],
         ),
@@ -87,30 +88,5 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  void navigateToListSeperated(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewSeperated(),));
-  }
-
-  void navigateToListViewBuilder(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const ListViewBuilderLearn(),));
-  }
-
-  void navigateToListView(BuildContext context) {
-
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const ListViewLearn(),));
-
-  }
-
-  void navigateToPageView(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  PageViewLearn(message: '',),));
-  }
-
-  void navigateToLifeCycle(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  LifeCycle(name: 'Emircan',),));
-  }
-
-  void navigateToTextField(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TextFieldLearn(),));
-  }
 
 }
