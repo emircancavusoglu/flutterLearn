@@ -27,10 +27,7 @@ class _NavigatorViewState extends State<NavigatorView> {
               children: [
                 Center(
                   child: IconButton(onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const ListViewLearn(),
-                      fullscreenDialog: true,
-                    ));
+                    NavigatorManager.navigateToWidget(context, const ListViewLearn());
                   }, icon: const Icon(Icons.chevron_right_outlined)),
                 )
               ],
@@ -41,4 +38,10 @@ class _NavigatorViewState extends State<NavigatorView> {
     );
   }
 }
-
+class NavigatorManager{
+  static void navigateToWidget(BuildContext context, Widget widget){
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      return widget;
+    },));
+  }
+}
