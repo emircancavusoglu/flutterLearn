@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterprojemm/const/string_consts.dart';
+import 'package:flutterprojemm/const/strings.dart';
 
 class PageViewLearn extends StatefulWidget {
   PageViewLearn({Key? key, required this.message}) : super(key: key);

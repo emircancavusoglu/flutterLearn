@@ -5,7 +5,7 @@ import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/navigator.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
-import '../const/string_consts.dart';
+import '../const/strings.dart';
 import '../product/customButton.dart';
 import 'life_cycle.dart';
 
