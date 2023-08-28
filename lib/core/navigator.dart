@@ -1,23 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutterprojemm/const/colors.dart';
+import 'package:flutterprojemm/core/list_view.dart';
 
-class Navigator extends StatefulWidget {
-  const Navigator({Key? key}) : super(key: key);
+
+class NavigatorView extends StatefulWidget {
+  const NavigatorView({Key? key}) : super(key: key);
 
   @override
-  State<Navigator> createState() => _NavigatorState();
+  State<NavigatorView> createState() => _NavigatorViewState();
 }
 
-class _NavigatorState extends State<Navigator> {
+class _NavigatorViewState extends State<NavigatorView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Container(
-        width: 200,
-        height: 250,
-        color: MyColors.purple,
+      appBar: AppBar(
+        title: const Text("Navigator"),
+      ),
+      body: Center(
+        child: Container(
+          width:  200,
+          height: 100,
+          color: Colors.blueAccent,
+          child: Align(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: IconButton(onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewLearn() ,));
+                  }, icon: const Icon(Icons.chevron_right_outlined)),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
 }
+

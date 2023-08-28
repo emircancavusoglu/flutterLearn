@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
 import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
+import 'package:flutterprojemm/core/navigator.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import '../const/string_consts.dart';
@@ -76,6 +77,9 @@ class _MainScreenState extends State<MainScreen> {
             ElevatedButton(onPressed: (){
               navigateToListSeperated(context);
             }, child: Text(StringConst().listViewSeperated)),
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
+            }, child: const Text("Navigator"))
           ],
         ),
       ),
