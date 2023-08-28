@@ -27,7 +27,10 @@ class _NavigatorViewState extends State<NavigatorView> {
               children: [
                 Center(
                   child: IconButton(onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewLearn() ,));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ListViewLearn(),
+                      fullscreenDialog: true,
+                    ));
                   }, icon: const Icon(Icons.chevron_right_outlined)),
                 )
               ],
