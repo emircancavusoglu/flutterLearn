@@ -9,7 +9,7 @@ class TabbarExample extends StatefulWidget {
 class _TabbarExampleState extends State<TabbarExample> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: 3, child: Scaffold(
+    return DefaultTabController(length: MyPages.values.length, child: Scaffold(
       appBar: AppBar(
         bottom: const TabBar(
           tabs: [
@@ -30,4 +30,8 @@ class _TabbarExampleState extends State<TabbarExample> {
     ),
     );
   }
+}
+enum MyPages{
+  home,profile,settings
+
 }
