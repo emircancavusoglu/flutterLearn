@@ -11,13 +11,10 @@ class _TabbarExampleState extends State<TabbarExample> {
   Widget build(BuildContext context) {
     return DefaultTabController(length: MyPages.values.length, child: Scaffold(
       appBar: AppBar(
-        bottom: const TabBar(
-          tabs: [
-            Tab(icon: Icon(Icons.looks_one_sharp),),
-            Tab(icon: Icon(Icons.two_mp),),
-            Tab(icon: Icon(Icons.three_mp),
-            )
-          ],
+        bottom: TabBar(
+          onTap: (int index){},
+          tabs:
+            MyPages.values.map((e) => Tab(text: e.name)).toList(),
         ),
       ),
     body: const TabBarView(
@@ -32,6 +29,6 @@ class _TabbarExampleState extends State<TabbarExample> {
   }
 }
 enum MyPages{
-  home,profile,settings
+  Home,Profile,Settings
 
 }
