@@ -13,9 +13,9 @@ class _TabbarExampleState extends State<TabbarExample> {
       appBar: AppBar(
         bottom: const TabBar(
           tabs: [
-            Tab(icon: Icon(Icons.ac_unit),),
-            Tab(icon: Icon(Icons.ac_unit),),
-            Tab(icon: Icon(Icons.ac_unit),
+            Tab(icon: Icon(Icons.looks_one_sharp),),
+            Tab(icon: Icon(Icons.two_mp),),
+            Tab(icon: Icon(Icons.three_mp),
             )
           ],
         ),

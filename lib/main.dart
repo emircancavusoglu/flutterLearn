@@ -9,6 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Colors.blueAccent,
+          unselectedLabelColor: Colors.purple
+        )
+      ),
       debugShowCheckedModeBanner: false,
       home: MainScreen(color1: Colors.redAccent,),
     );
