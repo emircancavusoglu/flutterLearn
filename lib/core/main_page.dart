@@ -41,7 +41,7 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
       appBar: AppBar(
         actions: const [Padding(
           padding: EdgeInsets.only(right: 16.0),
-          child: Icon(Icons.add_a_photo),
+          child: Icon(Icons.accessibility),
         )],
       ),
       body: Container(
