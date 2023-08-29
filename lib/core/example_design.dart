@@ -7,7 +7,9 @@ class ExampleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.chevron_left),
+        leading: IconButton(onPressed: (){
+          Navigator.of(context).pop();
+        }, icon:const Icon(Icons.chevron_left)),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 7),

@@ -5,6 +5,7 @@ import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/navigator.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
+import 'package:flutterprojemm/tabbar.dart';
 import '../const/strings.dart';
 import '../product/customButton.dart';
 import 'example_design.dart';
@@ -84,7 +85,10 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             }, child: const Text("Navigator")),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const ExampleApp());
-            }, child: const Text("Example Design"))
+            }, child: const Text("Example Design")),
+            ElevatedButton(onPressed: (){
+              navigateToWidget(context, const TabbarExample());
+            }, child: const Text("Tabbar Learn"))
           ],
         ),
       ),
