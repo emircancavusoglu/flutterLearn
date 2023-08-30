@@ -9,16 +9,19 @@ class PostView extends StatefulWidget {
 }
 
 class _PostViewState extends State<PostView> {
-  Post5 post5 = Post5(title: "Post View");
+  Post5 post5 = Post5(body: "Post View");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {
-        post5.copyWith(title: "new post View");
-      },),
+        setState(() {
+          post5.copyWith(body: "new post View");
+          post5.updateTitle("new body");
+        });
+        },),
       appBar: AppBar(),
       body: Center(
-          child: Text(post5.title?? 'not has any title')),
+          child: Text(post5.body?? 'not has any title')),
     );
   }
 }

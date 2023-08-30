@@ -47,14 +47,14 @@ class Post4 {
 class Post5 {
   final int? userId;
   final int? id;
-  String? title;
-  final String? body;
+  final String? title;
+  String? body;
 
   Post5({this.userId, this.id, this.title, this.body});
 
   void updateTitle(String? data){
     if(data != null&& data.isNotEmpty){
-      title = data;
+      body = data;
     }
   }
   Post5 copyWith({
