@@ -4,6 +4,7 @@ import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/navigator.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
+import 'package:flutterprojemm/core/post_view.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import 'package:flutterprojemm/tabbar.dart';
 import '../const/strings.dart';
@@ -21,7 +22,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> with NavigatorManager{
-  // CustomButton custom = const CustomButton();
   int counter = 0;
   void update(bool isIncrement){
     if(isIncrement){
@@ -88,13 +88,14 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             }, child: const Text("Example Design")),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const TabbarExample());
-            }, child: const Text("Tabbar Learn"))
+            }, child: const Text("Tabbar Learn")),
+            ElevatedButton(onPressed: (){
+              navigateToWidget(context, const PostView());
+            }, child: const Text("PostView"))
           ],
         ),
       ),
       bottomNavigationBar: const BottomNavigation(),
     );
   }
-
-
 }

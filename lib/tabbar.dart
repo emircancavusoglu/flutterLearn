@@ -30,5 +30,4 @@ class _TabbarExampleState extends State<TabbarExample> {
 }
 enum MyPages{
   Home,Profile,Settings
-
 }

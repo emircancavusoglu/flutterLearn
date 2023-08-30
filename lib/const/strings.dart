@@ -5,4 +5,5 @@ class StringConst{
   final String listView = "ListView";
   final String listViewBuilder = "listView Builder";
   final String listViewSeperated = "listView Seperated";
+  final String navigator = "Navigator";
 }
