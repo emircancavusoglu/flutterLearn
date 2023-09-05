@@ -1,4 +1,4 @@
-class StringConst{
+class StringConst {
   final String pageViewTitle = " PageView";
   final String lifeCyle = "LifeCycle";
   final String textField = "TextField Learn";

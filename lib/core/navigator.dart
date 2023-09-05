@@ -11,6 +11,8 @@ class NavigatorView extends StatefulWidget {
 }
 
 class _NavigatorViewState extends State<NavigatorView> with NavigatorManager {
+  final double containerWidth = 200;
+  final double containerHeight = 100;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +21,8 @@ class _NavigatorViewState extends State<NavigatorView> with NavigatorManager {
       ),
       body: Center(
         child: Container(
-          width:  200,
-          height: 100,
+          width:  containerWidth,
+          height: containerHeight,
           color: Colors.blueAccent,
           child: Align(
             child: Column(
