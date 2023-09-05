@@ -13,7 +13,7 @@ import 'example_design.dart';
 import 'life_cycle.dart';
 
 class MainScreen extends StatefulWidget {
-  MainScreen({Key? key, required this.color1}) : super(key: key);
+  const MainScreen({Key? key, required this.color1}) : super(key: key);
   final Color color1;
 
 
@@ -62,9 +62,6 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             ),
             const SizedBox(height: 20,),
             ElevatedButton(onPressed: (){
-              navigateToWidget(context, PageViewLearn(message: "PageViewExample"));
-            }, child: const Text("Yeni Sayfaya Geç")),
-            ElevatedButton(onPressed: (){
               navigateToWidget(context, LifeCycle(name: "Emircan"));
             }, child: Text(StringConst().lifeCyle)),
             ElevatedButton(onPressed: (){
@@ -82,16 +79,16 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const NavigatorView());
               // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
-            }, child: const Text("Navigator")),
+            }, child: Text(StringConst().navigator)),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const ExampleApp());
-            }, child: const Text("Example Design")),
+            }, child: Text(StringConst().exampleDesign)),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const TabbarExample());
-            }, child: const Text("Tabbar Learn")),
+            }, child: Text(StringConst().tabbarLearn)),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const PostView());
-            }, child: const Text("PostView"))
+            }, child: Text(StringConst().postView))
           ],
         ),
       ),
