@@ -9,4 +9,5 @@ class StringConst {
   final String exampleDesign = "Example Design";
   final String tabbarLearn = "Tabbar Learn";
   final String postView = "PostView";
+  final String bottomNavigation = "bottomNavigation";
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterprojemm/core/bottom_navigation2.dart';
 import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
 import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
@@ -88,7 +89,10 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             }, child: Text(StringConst().tabbarLearn)),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const PostView());
-            }, child: Text(StringConst().postView))
+            }, child: Text(StringConst().postView)),
+            ElevatedButton(onPressed: (){
+              navigateToWidget(context, const BottomExample2());
+            }, child: Text(StringConst().bottomNavigation))
           ],
         ),
       ),

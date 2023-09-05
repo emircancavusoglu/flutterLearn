@@ -3,6 +3,7 @@ import 'package:flutterprojemm/core/life_cycle.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 
 class BottomNavigation extends StatefulWidget {
+
   const BottomNavigation({Key? key}) : super(key: key);
 
   @override
@@ -10,6 +11,8 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
+  final String home = "Home";
+  final String newPage = "New Page";
   @override
   Widget build(BuildContext context) {
    return BottomNavigationBar(onTap: (int value){
@@ -19,9 +22,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
      else if(value == Labels.home.index){
        Navigator.push(context, MaterialPageRoute(builder: (context) => PageViewLearn(message: "merhaba"),));
      }
-   }, items: const <BottomNavigationBarItem>[
-     BottomNavigationBarItem(icon: Icon(Icons.account_balance),label: "Home"),
-     BottomNavigationBarItem(icon: Icon(Icons.adb),label: "New Page"),
+   }, items: <BottomNavigationBarItem>[
+     BottomNavigationBarItem(icon: const Icon(Icons.account_balance),label: home),
+     BottomNavigationBarItem(icon: const Icon(Icons.adb),label: newPage),
    ]
    );
   }
