@@ -10,4 +10,5 @@ class StringConst {
   final String tabbarLearn = "Tabbar Learn";
   final String postView = "PostView";
   final String bottomNavigation = "bottomNavigation";
+  final String sample = "sampleApp";
 }

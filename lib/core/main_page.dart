@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterprojemm/core/bottom_navigation2.dart';
 import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
+import 'package:flutterprojemm/core/example_2.dart';
 import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/navigator.dart';
@@ -62,10 +63,7 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               child: Text(counter.toString()),
             ),
             const SizedBox(height: 20,),
-            ElevatedButton(onPressed: (){
-              navigateToWidget(context, LifeCycle(name: "Emircan"));
-            }, child: Text(StringConst().lifeCyle)),
-            ElevatedButton(onPressed: (){
+             ElevatedButton(onPressed: (){
               navigateToWidget(context, const TextFieldLearn());
             }, child: Text(StringConst().textField)),
             ElevatedButton(onPressed: (){
@@ -92,7 +90,10 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             }, child: Text(StringConst().postView)),
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const BottomExample2());
-            }, child: Text(StringConst().bottomNavigation))
+            }, child: Text(StringConst().bottomNavigation)),
+            ElevatedButton(onPressed: (){
+              navigateToWidget(context, const MySample());
+            }, child: Text(StringConst().sample))
           ],
         ),
       ),
