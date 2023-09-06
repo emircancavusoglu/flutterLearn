@@ -15,7 +15,7 @@ class _BottomExample2State extends State<BottomExample2> {
       _backgroundColor = color;
     });
     }
-  Color _backgroundColor = Colors.transparent;
+  Color _backgroundColor = Colors.red;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
