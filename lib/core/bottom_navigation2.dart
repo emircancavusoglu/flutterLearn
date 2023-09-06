@@ -11,25 +11,23 @@ class BottomExample2 extends StatefulWidget {
 class _BottomExample2State extends State<BottomExample2> {
 
   void changeColor(Color color){
-    backgroundColor = color;
-  }
-  Color backgroundColor = Colors.transparent;
+    setState(() {
+      _backgroundColor = color;
+    });
+    }
+  Color _backgroundColor = Colors.transparent;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: _backgroundColor,
       appBar: AppBar(),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (value){
-          if(value == 0){
-            setState(() {
-              changeColor(Colors.teal);
-            });
+        onTap: (int value){
+          if(value == MyColors.teal.index){
+            changeColor(Colors.teal);
           }
-          else if(value == 1){
-            setState(() {
-              changeColor(Colors.tealAccent);
-            });
+          else if(value == MyColors.tealAccent.index){
+            changeColor(Colors.tealAccent);
           }
         },
         items: const [
@@ -39,4 +37,7 @@ class _BottomExample2State extends State<BottomExample2> {
       ),
     );
   }
+}
+enum MyColors{
+  teal, tealAccent
 }
