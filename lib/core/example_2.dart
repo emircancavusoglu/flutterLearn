@@ -13,9 +13,7 @@ class _MySampleState extends State<MySample> {
   @override
   void initState() {
     super.initState();
-    _items = [
-     CollectionModels(imagePath: 'assets/book.png', title: "title", price: 3.4)
-    ];
+    _items = CollectionItems()._items;
   }
   @override
   Widget build(BuildContext context) {
@@ -52,4 +50,18 @@ class CollectionModels{
   double price;
 
   CollectionModels({required this.imagePath, required this.title, required this.price});
+}
+
+
+class CollectionItems {
+  late final List <CollectionModels> _items;
+  CollectionItems() {
+    _items = [
+      CollectionModels(
+          imagePath: 'assets/book.png', title: "title", price: 3.4),
+      CollectionModels(
+          imagePath: 'assets/book.png', title: "title", price: 3.4),
+      CollectionModels(imagePath: 'assets/book.png', title: "title", price: 3.4)
+    ];
+  }
 }
