@@ -63,34 +63,44 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               child: Text(counter.toString()),
             ),
             const SizedBox(height: 20,),
+
              ElevatedButton(onPressed: (){
               navigateToWidget(context, const TextFieldLearn());
             }, child: Text(StringConst().textField)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const ListViewLearn());
             }, child: Text(StringConst().listView)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const ListViewBuilderLearn());
             }, child: Text(StringConst().listViewBuilder)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const ListViewSeperated());
               }, child: Text(StringConst().listViewSeperated)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const NavigatorView());
               // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
             }, child: Text(StringConst().navigator)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const ExampleApp());
             }, child: Text(StringConst().exampleDesign)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const TabbarExample());
             }, child: Text(StringConst().tabbarLearn)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const PostView());
             }, child: Text(StringConst().postView)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const BottomExample2());
             }, child: Text(StringConst().bottomNavigation)),
+
             ElevatedButton(onPressed: (){
               navigateToWidget(context, const MySample());
             }, child: Text(StringConst().sample))

@@ -52,7 +52,6 @@ class CollectionModels{
   CollectionModels({required this.imagePath, required this.title, required this.price});
 }
 
-
 class CollectionItems {
   late final List <CollectionModels> _items;
   CollectionItems() {
@@ -61,7 +60,8 @@ class CollectionItems {
           imagePath: ProjectImages.imagePath, title: "title", price: 3.4),
       CollectionModels(
           imagePath: ProjectImages.imagePath, title: "title", price: 3.4),
-      CollectionModels(imagePath: ProjectImages.imagePath, title: "title", price: 3.4)
+      CollectionModels(
+          imagePath: ProjectImages.imagePath, title: "title", price: 3.4)
     ];
   }
 }
