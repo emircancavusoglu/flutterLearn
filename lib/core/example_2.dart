@@ -58,10 +58,14 @@ class CollectionItems {
   CollectionItems() {
     _items = [
       CollectionModels(
-          imagePath: 'assets/book.png', title: "title", price: 3.4),
+          imagePath: ProjectImages.imagePath, title: "title", price: 3.4),
       CollectionModels(
-          imagePath: 'assets/book.png', title: "title", price: 3.4),
-      CollectionModels(imagePath: 'assets/book.png', title: "title", price: 3.4)
+          imagePath: ProjectImages.imagePath, title: "title", price: 3.4),
+      CollectionModels(imagePath: ProjectImages.imagePath, title: "title", price: 3.4)
     ];
   }
+}
+
+class ProjectImages{
+  static const imagePath = 'assets/book.png';
 }
