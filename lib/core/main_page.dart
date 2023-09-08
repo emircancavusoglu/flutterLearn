@@ -11,6 +11,7 @@ import 'package:flutterprojemm/core/text_field_learn.dart';
 import 'package:flutterprojemm/tabbar.dart';
 import '../const/strings.dart';
 import '../product/customButton.dart';
+import 'bottomAppBar.dart';
 import 'example_design.dart';
 import 'life_cycle.dart';
 
@@ -50,60 +51,66 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
         color: widget.color1,
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          children: [
-            ElevatedButton(onPressed: (){
-              update(true);
-            }, child: const Icon(Icons.add)),
-            ElevatedButton(onPressed: (){
-              update(false);
-            }, child: const Icon(Icons.remove)),
-            const CustomButtton(),
-            Center(
-              child: Text(counter.toString()),
-            ),
-            const SizedBox(height: 20,),
+        child: FittedBox(
+          child: Column(
+            children: [
+              ElevatedButton(onPressed: (){
+                update(true);
+              }, child: const Icon(Icons.add)),
+              ElevatedButton(onPressed: (){
+                update(false);
+              }, child: const Icon(Icons.remove)),
+              const CustomButtton(),
+              Center(
+                child: Text(counter.toString()),
+              ),
+              const SizedBox(height: 20,),
 
-             ElevatedButton(onPressed: (){
-              navigateTextField(context);
-            }, child: Text(StringConst().textField)),
+               ElevatedButton(onPressed: (){
+                navigateTextField(context);
+              }, child: Text(StringConst().textField)),
 
-            ElevatedButton(onPressed: (){
-              navigateListView(context);
-            }, child: Text(StringConst().listView)),
+              ElevatedButton(onPressed: (){
+                navigateListView(context);
+              }, child: Text(StringConst().listView)),
 
-            ElevatedButton(onPressed: (){
-              navigateListViewBuilder(context);
-            }, child: Text(StringConst().listViewBuilder)),
+              ElevatedButton(onPressed: (){
+                navigateListViewBuilder(context);
+              }, child: Text(StringConst().listViewBuilder)),
 
-            ElevatedButton(onPressed: (){
-              navigateListViewSeperated(context);
-              }, child: Text(StringConst().listViewSeperated)),
+              ElevatedButton(onPressed: (){
+                navigateListViewSeperated(context);
+                }, child: Text(StringConst().listViewSeperated)),
 
-            ElevatedButton(onPressed: (){
-              navigateNavigatorView(context);
-            }, child: Text(StringConst().navigator)),
+              ElevatedButton(onPressed: (){
+                navigateNavigatorView(context);
+              }, child: Text(StringConst().navigator)),
 
-            ElevatedButton(onPressed: (){
-              navigateToWidget(context, const ExampleApp());
-            }, child: Text(StringConst().exampleDesign)),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const ExampleApp());
+              }, child: Text(StringConst().exampleDesign)),
 
-            ElevatedButton(onPressed: (){
-              navigateToWidget(context, const TabbarExample());
-            }, child: Text(StringConst().tabbarLearn)),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const TabbarExample());
+              }, child: Text(StringConst().tabbarLearn)),
 
-            ElevatedButton(onPressed: (){
-              navigateToWidget(context, const PostView());
-            }, child: Text(StringConst().postView)),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const PostView());
+              }, child: Text(StringConst().postView)),
 
-            ElevatedButton(onPressed: (){
-              navigateToWidget(context, const BottomExample2());
-            }, child: Text(StringConst().bottomNavigation)),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const BottomExample2());
+              }, child: Text(StringConst().bottomNavigation)),
 
-            ElevatedButton(onPressed: (){
-              navigateToWidget(context, const MySample());
-            }, child: Text(StringConst().sample))
-          ],
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const MySample());
+              }, child: Text(StringConst().sample)),
+
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const CustomBottomAppBar());
+              }, child: Text(StringConst().bottomNavigation)),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNavigation(),
