@@ -65,24 +65,23 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
             const SizedBox(height: 20,),
 
              ElevatedButton(onPressed: (){
-              navigateToWidget(context, const TextFieldLearn());
+              navigateTextField(context);
             }, child: Text(StringConst().textField)),
 
             ElevatedButton(onPressed: (){
-              navigateToWidget(context, const ListViewLearn());
+              navigateListView(context);
             }, child: Text(StringConst().listView)),
 
             ElevatedButton(onPressed: (){
-              navigateToWidget(context, const ListViewBuilderLearn());
+              navigateListViewBuilder(context);
             }, child: Text(StringConst().listViewBuilder)),
 
             ElevatedButton(onPressed: (){
-              navigateToWidget(context, const ListViewSeperated());
+              navigateListViewSeperated(context);
               }, child: Text(StringConst().listViewSeperated)),
 
             ElevatedButton(onPressed: (){
-              navigateToWidget(context, const NavigatorView());
-              // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigatorView(),));
+              navigateNavigatorView(context);
             }, child: Text(StringConst().navigator)),
 
             ElevatedButton(onPressed: (){
@@ -109,5 +108,25 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
       ),
       bottomNavigationBar: const BottomNavigation(),
     );
+  }
+
+  void navigateNavigatorView(BuildContext context) {
+    navigateToWidget(context, const NavigatorView());
+  }
+
+  void navigateListViewSeperated(BuildContext context) {
+    navigateToWidget(context, const ListViewSeperated());
+  }
+
+  void navigateListViewBuilder(BuildContext context) {
+    navigateToWidget(context, const ListViewBuilderLearn());
+  }
+
+  void navigateListView(BuildContext context) {
+    navigateToWidget(context, const ListViewLearn());
+  }
+
+  void navigateTextField(BuildContext context) {
+    navigateToWidget(context, const TextFieldLearn());
   }
 }
