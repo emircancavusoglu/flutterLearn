@@ -22,6 +22,7 @@ class _MySampleState extends State<MySample> {
         itemCount: _items.length,
         itemBuilder: (context, index) {
           return Card(
+            margin: const EdgeInsets.all(20),
             child: SizedBox(
               height: 300,
               child: Expanded(
