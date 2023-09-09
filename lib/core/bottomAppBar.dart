@@ -34,6 +34,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
 }
 
 class MyBottomAppBar extends StatelessWidget {
+  final double _notchMargin = 10;
   const MyBottomAppBar({
     super.key,
     required TabController tabController,
@@ -45,7 +46,7 @@ class MyBottomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       color: Colors.blue,
-      notchMargin: 10,
+      notchMargin: _notchMargin,
       shape: const CircularNotchedRectangle(),
       child: TabBar(
         unselectedLabelColor: Colors.purple,

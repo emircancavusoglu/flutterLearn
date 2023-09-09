@@ -11,7 +11,7 @@ class _CustomButttonState extends State<CustomButtton> {
   int _counterCustom = 0;
   void _update(){
     setState(() {
-      print("basıldı");
+      print("pushed");
       _counterCustom++;
     });
 
@@ -19,7 +19,7 @@ class _CustomButttonState extends State<CustomButtton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(onPressed: (){
-      print("basıldı");
+      print("pushed");
       _update();
     }, child: Text(_counterCustom.toString()));
   }
