@@ -7,7 +7,14 @@ class CustomBottomAppBar extends StatefulWidget {
   State<CustomBottomAppBar> createState() => _CustomBottomAppBarState();
 }
 
-class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
+class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProviderStateMixin {
+  late final TabController _tabController;
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -17,8 +24,9 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(onPressed: (){},
           child: const Icon(Icons.add),),
-        bottomNavigationBar: const BottomAppBar(
-          shape: CircularNotchedRectangle(),
+        bottomNavigationBar: BottomAppBar(
+          notchMargin: 10,
+          shape: const CircularNotchedRectangle(),
           child: TabBar(
             tabs: [
               Tab(
@@ -31,7 +39,6 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
           ),
         ),
       ),
-
     );
   }
 }
