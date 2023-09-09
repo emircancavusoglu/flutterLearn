@@ -12,7 +12,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: _MyTabbarViews.values.length, vsync: this);
   }
 
   @override
@@ -23,31 +23,59 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
         extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(onPressed: (){
-          _tabController.animateTo(1);
+          _tabController.animateTo(_MyTabbarViews.settings.index);
         },
           child: const Icon(Icons.add),),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.blue,
-          notchMargin: 10,
-          shape: const CircularNotchedRectangle(),
-          child: TabBar(
-            unselectedLabelColor: Colors.purple,
-            controller: _tabController,
-            tabs: _MyTabbarViews.values.map((e) => Tab(text: e.name,)).toList()
-          ),
-        ),
-        body: TabBarView(
-          controller: _tabController,
-          children: [
-            Container(
-              color: Colors.red,
-            ),
-            Container(
-              color: Colors.yellow,
-            )
-          ],
-        ),
+        bottomNavigationBar: MyBottomAppBar(tabController: _tabController),
+        body: _tabbarView(tabController: _tabController),
       ),
+    );
+  }
+}
+
+class MyBottomAppBar extends StatelessWidget {
+  const MyBottomAppBar({
+    super.key,
+    required TabController tabController,
+  }) : _tabController = tabController;
+
+  final TabController _tabController;
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      color: Colors.blue,
+      notchMargin: 10,
+      shape: const CircularNotchedRectangle(),
+      child: TabBar(
+        unselectedLabelColor: Colors.purple,
+        controller: _tabController,
+        tabs: _MyTabbarViews.values.map((e) => Tab(text: e.name,)).toList()
+      ),
+    );
+  }
+}
+
+class _tabbarView extends StatelessWidget {
+  const _tabbarView({
+    super.key,
+    required TabController tabController,
+  }) : _tabController = tabController;
+
+  final TabController _tabController;
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(
+      controller: _tabController,
+      children: [
+        Container(
+          color: Colors.red,
+        ),
+        Container(
+          color: Colors.yellow,
+        )
+      ],
     );
   }
 }
