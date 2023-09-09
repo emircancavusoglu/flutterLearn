@@ -18,7 +18,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: MyTabbarViews.values.length,
       child: Scaffold(
         extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -31,6 +31,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
           notchMargin: 10,
           shape: const CircularNotchedRectangle(),
           child: TabBar(
+            unselectedLabelColor: Colors.purple,
             controller: _tabController,
             tabs: const [
               Tab(
@@ -43,6 +44,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
           ),
         ),
         body: TabBarView(
+          controller: _tabController,
           children: [
             Container(
               color: Colors.red,
@@ -55,4 +57,8 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
       ),
     );
   }
+}
+enum MyTabbarViews{
+  page1,
+  page2
 }
