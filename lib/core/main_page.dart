@@ -8,7 +8,7 @@ import 'package:flutterprojemm/core/navigator.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/post_view.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
-import 'package:flutterprojemm/tabbar.dart';
+import 'package:flutterprojemm/core/tabbar.dart';
 import '../const/strings.dart';
 import '../product/customButton.dart';
 import 'bottomAppBar.dart';

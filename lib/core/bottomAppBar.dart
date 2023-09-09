@@ -10,15 +10,12 @@ class CustomBottomAppBar extends StatefulWidget {
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   @override
   Widget build(BuildContext context) {
-    return const BottomAppBar(
-      color: Colors.orangeAccent,
-      shape: CircularNotchedRectangle(),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+    return Scaffold(
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(onPressed: (){},
+        child: const Icon(Icons.add),),
 
-      ],
-      ),
     );
   }
 }
