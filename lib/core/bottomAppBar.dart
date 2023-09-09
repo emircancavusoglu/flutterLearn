@@ -22,13 +22,17 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
       child: Scaffold(
         extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(onPressed: (){},
+        floatingActionButton: FloatingActionButton(onPressed: (){
+          _tabController.animateTo(1);
+        },
           child: const Icon(Icons.add),),
         bottomNavigationBar: BottomAppBar(
+          color: Colors.blue,
           notchMargin: 10,
           shape: const CircularNotchedRectangle(),
           child: TabBar(
-            tabs: [
+            controller: _tabController,
+            tabs: const [
               Tab(
                 text: "Page 1",
               ),
@@ -37,6 +41,16 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
               )
             ],
           ),
+        ),
+        body: TabBarView(
+          children: [
+            Container(
+              color: Colors.red,
+            ),
+            Container(
+              color: Colors.yellow,
+            )
+          ],
         ),
       ),
     );
