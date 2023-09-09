@@ -10,11 +10,27 @@ class CustomBottomAppBar extends StatefulWidget {
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(onPressed: (){},
-        child: const Icon(Icons.add),),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        extendBody: true,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(onPressed: (){},
+          child: const Icon(Icons.add),),
+        bottomNavigationBar: const BottomAppBar(
+          shape: CircularNotchedRectangle(),
+          child: TabBar(
+            tabs: [
+              Tab(
+                text: "Page 1",
+              ),
+              Tab(
+                text: "Page 2",
+              )
+            ],
+          ),
+        ),
+      ),
 
     );
   }
