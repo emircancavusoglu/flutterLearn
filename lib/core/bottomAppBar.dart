@@ -20,6 +20,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> with TickerProv
     return DefaultTabController(
       length: _MyTabbarViews.values.length,
       child: Scaffold(
+        appBar: AppBar(),
         extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(onPressed: (){

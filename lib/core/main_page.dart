@@ -9,6 +9,7 @@ import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/post_view.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import 'package:flutterprojemm/core/tabbar.dart';
+import 'package:flutterprojemm/product/custom_bottomsheet.dart';
 import '../const/strings.dart';
 import '../product/customButton.dart';
 import 'bottomAppBar.dart';
@@ -109,6 +110,9 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               ElevatedButton(onPressed: (){
                 navigateToWidget(context, const CustomBottomAppBar());
               }, child: Text(StringConst().bottomNavigation)),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const CustomBottomSheet());
+              }, child: const Text("BottomSheet"))
             ],
           ),
         ),
