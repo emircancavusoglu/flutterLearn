@@ -43,6 +43,20 @@ class Post4 {
         required this.id,
         title,
         required this.body});
+
+  Post4 copyWith({
+    int? userId,
+    int? id,
+    String? title,
+    String? body,
+}) {
+    return Post4(
+      userId: userId ?? this.userId,
+      id: id ?? this.id,
+      title: title ?? this.title,
+      body: body ?? this.body,
+    );
+  }
 }
 
 class Post5 {

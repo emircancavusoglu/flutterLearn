@@ -9,14 +9,21 @@ class ModelView extends StatefulWidget {
 }
 
 class _ModelViewState extends State<ModelView> {
-  final user4 = Post4(userId: 1, id: 2, body: "");
+  var user4 = Post4(userId: 1, id: 2, body: "body");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(user4.title),
       ),
-      body: Text(""),
+      body: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            user4 = user4.copyWith(title: "merhaba");
+          });
+        },
+        child: const Icon(Icons.add_circle),
+      ),
     );
   }
 }
