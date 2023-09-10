@@ -4,6 +4,7 @@ import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
 import 'package:flutterprojemm/core/example_2.dart';
 import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
+import 'package:flutterprojemm/core/model_view.dart';
 import 'package:flutterprojemm/core/navigator.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/post_view.dart';
@@ -112,7 +113,11 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               }, child: Text(StringConst().bottomNavigation)),
               ElevatedButton(onPressed: (){
                 navigateToWidget(context, const CustomBottomSheet());
-              }, child: const Text("BottomSheet"))
+              }, child: const Text("BottomSheet")),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const ModelView());
+              },
+                  child: const Text("ModelView")),
             ],
           ),
         ),

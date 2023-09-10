@@ -34,14 +34,15 @@ class Post3 {
 class Post4 {
   final int userId;
   final int id;
-  final String title;
+  final String title = "myTitle";
   final String body;
 
   Post4(
-      {required this.userId,
-      required this.id,
-      required this.title,
-      required this.body});
+      {
+        required this.userId,
+        required this.id,
+        title,
+        required this.body});
 }
 
 class Post5 {

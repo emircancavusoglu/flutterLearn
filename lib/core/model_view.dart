@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutterprojemm/product/models/post_model.dart';
 
-class ModalView extends StatefulWidget {
-  const ModalView({Key? key}) : super(key: key);
+class ModelView extends StatefulWidget {
+  const ModelView({Key? key}) : super(key: key);
 
   @override
-  State<ModalView> createState() => _ModalViewState();
+  State<ModelView> createState() => _ModelViewState();
 }
 
-class _ModalViewState extends State<ModalView> {
+class _ModelViewState extends State<ModelView> {
+  final user4 = Post4(userId: 1, id: 2, body: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(""),
+        title: Text(user4.title),
       ),
       body: Text(""),
     );
