@@ -16,13 +16,16 @@ class _ModelViewState extends State<ModelView> {
       appBar: AppBar(
         title: Text(user4.title),
       ),
-      body: FloatingActionButton(
-        onPressed: (){
-          setState(() {
-            user4 = user4.copyWith(title: "merhaba");
-          });
-        },
-        child: const Icon(Icons.add_circle),
+      body: Center(
+        child: FloatingActionButton(
+          onPressed: (){
+            setState(() {
+              user4 = user4.copyWith(title: "new Value");
+              user4.changeTitle("merhaba");
+            });
+          },
+          child: const Icon(Icons.add_circle),
+        ),
       ),
     );
   }

@@ -34,7 +34,7 @@ class Post3 {
 class Post4 {
   final int userId;
   final int id;
-  final String title = "myTitle";
+  String title = "myTitle";
   final String body;
 
   Post4(
@@ -43,6 +43,11 @@ class Post4 {
         required this.id,
         title,
         required this.body});
+  void changeTitle(String? newData){
+    if(newData !=null && newData.isNotEmpty){
+      title = newData;
+    }
+  }
 
   Post4 copyWith({
     int? userId,
