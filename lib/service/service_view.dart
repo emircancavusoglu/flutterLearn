@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprojemm/service/post_model.dart';
 
@@ -10,6 +11,9 @@ class ServiceView extends StatefulWidget {
 
 class _ServiceViewState extends State<ServiceView> {
   List<PostModel>? _items;
+  Future<void> fetchPostItems() async{
+   final response = await Dio().get('https://jsonplaceholder.typicode.com/posts');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
