@@ -11,6 +11,7 @@ import 'package:flutterprojemm/core/post_view.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
 import 'package:flutterprojemm/core/tabbar.dart';
 import 'package:flutterprojemm/product/custom_bottomsheet.dart';
+import 'package:flutterprojemm/service/service_view.dart';
 import '../const/strings.dart';
 import '../product/customButton.dart';
 import 'bottomAppBar.dart';
@@ -118,6 +119,9 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
                 navigateToWidget(context, const ModelView());
               },
                   child: const Text("ModelView")),
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const ServiceView());
+              }, child: const Text("Post Model View"))
             ],
           ),
         ),
