@@ -36,10 +36,11 @@ class _ServiceViewState extends State<ServiceView> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         itemCount: _items?.length ?? 0,
         itemBuilder: (context, index) {
         return Card(
-          margin: EdgeInsets.symmetric(horizontal: 1.2),
+          margin: const EdgeInsets.only(bottom: 20),
           child: ListTile(
             title: Text(_items?[index].title ?? ''),
             subtitle: Text(_items?[index].body ?? ''),
