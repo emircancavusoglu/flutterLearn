@@ -117,8 +117,7 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               }, child: const Text("BottomSheet")),
               ElevatedButton(onPressed: (){
                 navigateToWidget(context, const ModelView());
-              },
-                  child: const Text("ModelView")),
+              }, child: const Text("ModelView")),
               ElevatedButton(onPressed: (){
                 navigateToWidget(context, const ServiceView());
               }, child: const Text("Post Model View"))

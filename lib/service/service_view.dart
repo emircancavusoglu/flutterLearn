@@ -1,3 +1,4 @@
+// import 'package:universal_html/html.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprojemm/service/post_model.dart';
@@ -11,8 +12,24 @@ class ServiceView extends StatefulWidget {
 
 class _ServiceViewState extends State<ServiceView> {
   List<PostModel>? _items;
+
+  @override
+  void initState(){
+    super.initState();
+    fetchPostItems();
+  }
+
   Future<void> fetchPostItems() async{
    final response = await Dio().get('https://jsonplaceholder.typicode.com/posts');
+   if(response.statusCode == 200){
+     final _datas = response.data;
+     if(_datas is List){
+       setState(() {
+         _items = _datas.map((e) =>
+             PostModel.fromJson(e)).toList(); //create new list because of the map
+       });
+       }
+   }
   }
   @override
   Widget build(BuildContext context) {
@@ -21,7 +38,13 @@ class _ServiceViewState extends State<ServiceView> {
       body: ListView.builder(
         itemCount: _items?.length ?? 0,
         itemBuilder: (context, index) {
-        return const Text("data");
+        return Card(
+          margin: EdgeInsets.symmetric(horizontal: 1.2),
+          child: ListTile(
+            title: Text(_items?[index].title ?? ''),
+            subtitle: Text(_items?[index].body ?? ''),
+          ),
+        );
       },),
     );
   }
