@@ -12,14 +12,18 @@ class ServiceView extends StatefulWidget {
 
 class _ServiceViewState extends State<ServiceView> {
   List<PostModel>? _items;
-
+  bool _isLoading = false;
   @override
   void initState(){
     super.initState();
     fetchPostItems();
   }
+  void changeLoading(){
+    _isLoading = !_isLoading;
+  }
 
   Future<void> fetchPostItems() async{
+    changeLoading();
    final response = await Dio().get('https://jsonplaceholder.typicode.com/posts');
    if(response.statusCode == 200){
      final _datas = response.data;
@@ -30,11 +34,14 @@ class _ServiceViewState extends State<ServiceView> {
        });
        }
    }
+    changeLoading();
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [_isLoading ? const CircularProgressIndicator.adaptive() : const SizedBox.shrink()],
+      ),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         itemCount: _items?.length ?? 0,
