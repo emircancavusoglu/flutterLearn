@@ -13,9 +13,12 @@ class ServiceView extends StatefulWidget {
 class _ServiceViewState extends State<ServiceView> {
   List<PostModel>? _items;
   bool _isLoading = false;
+  final _baseUrl = 'https://jsonplaceholder.typicode.com/';
+  late final Dio _dio;
   @override
   void initState(){
     super.initState();
+    _dio = Dio(BaseOptions(baseUrl: _baseUrl));
     fetchPostItems();
   }
   void changeLoading(){
