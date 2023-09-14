@@ -12,9 +12,12 @@ class ServiceLearn extends StatefulWidget {
 }
 
 class _ServiceLearnState extends State<ServiceLearn> {
+  final _baseUrl = 'https://jsonplaceholder.typicode.com/';
+  late final Dio _dio;
   @override
   void initState() {
     super.initState();
+    _dio = Dio(BaseOptions(baseUrl: _baseUrl));
     fetchItems();
   }
 
@@ -27,7 +30,7 @@ class _ServiceLearnState extends State<ServiceLearn> {
   List<PostModel>? _item;
   Future<void> fetchItems() async{
     _changeStatus();
-    final response = await Dio().get('https://jsonplaceholder.typicode.com/posts');
+    final response = await _dio.get('posts');
     if(response.statusCode == 200){
       final _myDatas = response.data;
       if(_myDatas is List){
@@ -47,7 +50,11 @@ class _ServiceLearnState extends State<ServiceLearn> {
 }
 
 class PostModelAdvanced extends StatelessWidget {
-  const PostModelAdvanced({
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController bodyController = TextEditingController();
+  final TextEditingController userIdController = TextEditingController();
+
+  PostModelAdvanced({
     super.key,
     required List<PostModel>? item,
   }) : _item = item;
@@ -56,15 +63,30 @@ class PostModelAdvanced extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _item?.length ?? 0,
-      itemBuilder: (context, index) {
-      return Card(
-        child: ListTile(
-          title: Text(_item?[index].title ?? ""),
-          subtitle: Text(_item?[index].body ?? ""),
-        ),
-      );
-    },);
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(
+        children: [
+          TextField(
+            decoration: const InputDecoration(
+              labelText: 'Title'
+            ),
+            controller: titleController,
+          ),
+          TextField(
+            decoration:const InputDecoration(
+              labelText:  'Body'
+            ),
+            controller: bodyController,
+          ),
+          TextField(
+            decoration: const InputDecoration(
+              labelText:  'UserId'
+            ),
+            controller: userIdController,
+          ),
+        ],
+      ),
+    );
   }
 }

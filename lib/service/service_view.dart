@@ -27,7 +27,7 @@ class _ServiceViewState extends State<ServiceView> {
 
   Future<void> fetchPostItems() async{
     changeLoading();
-   final response = await Dio().get('https://jsonplaceholder.typicode.com/posts');
+   final response = await _dio.get('/posts');
    if(response.statusCode == 200){
      final _datas = response.data;
      if(_datas is List){
