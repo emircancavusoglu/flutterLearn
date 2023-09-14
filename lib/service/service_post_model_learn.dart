@@ -12,22 +12,48 @@ class ServiceLearn extends StatefulWidget {
 }
 
 class _ServiceLearnState extends State<ServiceLearn> {
+
+  List<PostModel>? _item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PostModelAdvanced(item: _item),
+    );
+  }
+}
+
+class PostModelAdvanced extends StatefulWidget {
+
+  PostModelAdvanced({
+    super.key,
+    required List<PostModel>? item,
+  }) : _item = item;
+
+  final List<PostModel>? _item;
+
+  @override
+  State<PostModelAdvanced> createState() => _PostModelAdvancedState();
+}
+
+class _PostModelAdvancedState extends State<PostModelAdvanced> {
+  List<PostModel>? _item;
   final _baseUrl = 'https://jsonplaceholder.typicode.com/';
   late final Dio _dio;
+  late String name = "emircan";
+  bool isLoading = false;
   @override
   void initState() {
     super.initState();
     _dio = Dio(BaseOptions(baseUrl: _baseUrl));
     fetchItems();
   }
-
-  bool isLoading = false;
   void _changeStatus(){
     setState(() {
       isLoading = !isLoading;
+      name = "mehmet";
     });
   }
-  List<PostModel>? _item;
   Future<void> fetchItems() async{
     _changeStatus();
     final response = await _dio.get('posts');
@@ -41,25 +67,19 @@ class _ServiceLearnState extends State<ServiceLearn> {
     }
     _changeStatus();
   }
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: PostModelAdvanced(item: _item),
-    );
-  }
-}
 
-class PostModelAdvanced extends StatelessWidget {
+  Future<void> _addItem(PostModel postModel) async {
+    _changeStatus();
+    final response = await _dio.post('post',data: postModel);
+    if(response.statusCode == HttpStatus.ok){
+      name = "Basarili";
+    }
+    _changeStatus();
+  }
+
   final TextEditingController titleController = TextEditingController();
   final TextEditingController bodyController = TextEditingController();
   final TextEditingController userIdController = TextEditingController();
-
-  PostModelAdvanced({
-    super.key,
-    required List<PostModel>? item,
-  }) : _item = item;
-
-  final List<PostModel>? _item;
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +103,22 @@ class PostModelAdvanced extends StatelessWidget {
             decoration: const InputDecoration(
               labelText:  'UserId'
             ),
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.number,
             controller: userIdController,
           ),
+          TextButton(onPressed:
+              isLoading ? null :
+              (){
+            if(titleController.text.isNotEmpty&& bodyController.text.isNotEmpty
+            &&userIdController.text.isNotEmpty){
+              final model = PostModel(userId: int.tryParse(userIdController.text),
+                title: titleController.text,
+                body: bodyController.text,
+              );
+              _addItem(model);
+            }
+          }, child: const Text('Send')),
         ],
       ),
     );
