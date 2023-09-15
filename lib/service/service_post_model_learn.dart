@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprojemm/service/post_model.dart';
 
@@ -77,6 +78,16 @@ class _PostModelAdvancedState extends State<PostModelAdvanced> {
     _changeStatus();
   }
 
+  Future<bool> _putItem(PostModel postModel, int id) async {
+    try{
+      final response = await _dio.put('${PostServicePath.posts.name}/$id',data: postModel);
+      return response.statusCode == HttpStatus.ok;
+    }
+    on DioException catch(error){
+      _ShowDebug.showDioError(error);
+    }
+    return false;
+  }
   final TextEditingController titleController = TextEditingController();
   final TextEditingController bodyController = TextEditingController();
   final TextEditingController userIdController = TextEditingController();
@@ -126,4 +137,12 @@ class _PostModelAdvancedState extends State<PostModelAdvanced> {
 }
 enum PostServicePath{
   posts,comments
+}
+
+class _ShowDebug{
+  static void showDioError(DioException exception){
+    if(kDebugMode){
+      print(exception.message);
+    }
+  }
 }

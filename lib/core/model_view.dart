@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterprojemm/product/models/post_model.dart';
+import 'package:flutterprojemm/product/models/post_model1.dart';
 
 class ModelView extends StatefulWidget {
   const ModelView({Key? key}) : super(key: key);
