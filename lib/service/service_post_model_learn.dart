@@ -70,7 +70,7 @@ class _PostModelAdvancedState extends State<PostModelAdvanced> {
 
   Future<void> _addItem(PostModel postModel) async {
     _changeStatus();
-    final response = await _dio.post('post',data: postModel);
+    final response = await _dio.post(PostServicePath.posts.name,data: postModel);
     if(response.statusCode == HttpStatus.ok){
       name = "Basarili";
     }
@@ -123,4 +123,7 @@ class _PostModelAdvancedState extends State<PostModelAdvanced> {
       ),
     );
   }
+}
+enum PostServicePath{
+  posts,comments
 }
