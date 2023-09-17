@@ -8,6 +8,12 @@ class InvestmentApp extends StatefulWidget {
 }
 
 class _InvestmentAppState extends State<InvestmentApp> {
+  int _selectedIndex = 0;
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +64,9 @@ class _InvestmentAppState extends State<InvestmentApp> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: _onItemTapped,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
         items: const [
           BottomNavigationBarItem(
             label:'',
