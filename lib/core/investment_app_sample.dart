@@ -19,15 +19,39 @@ class _InvestmentAppState extends State<InvestmentApp> {
           Icon(Icons.notifications_none),
         ],
       ),
-      body: Card(
-        margin: const EdgeInsets.only(top: 20),
-        child: Container(
-          color: Colors.indigo,
-          width: 400,
-          height: 200,
-          child: const Center(child: Text("245,446",style: TextStyle(fontSize: 25),)),
+      body: Column(
+        children: [
+          Card(
+            margin: const EdgeInsets.only(left: 20, top: 20,right: 20),
+            child: Container(
+              color: Colors.indigo,
+              width: 400,
+              height: 200,
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("245,446",style: TextStyle(fontSize: 25),),
+                  SizedBox(height: 10,),
+                  Text("Total Balance",style: TextStyle(fontSize: 12),),
+                ],
+              ),
+            ),
+          ),
+        const SizedBox(height: 10,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton.icon(onPressed: (){}, icon: const Icon(Icons.price_change),
+                label: const Text("Top Up"),style: TextButton.styleFrom(backgroundColor: Colors.grey),
+            ),
+            const SizedBox(width: 10,),
+            ElevatedButton.icon(onPressed: (){}, icon: const Icon(Icons.currency_exchange_sharp),
+                label: const Text("Transfer"),style: TextButton.styleFrom(backgroundColor: Colors.grey),),
+          ],
         ),
+        ],
       ),
+
     );
   }
 }
