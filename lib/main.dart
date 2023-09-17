@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      home: MainScreen(color1: Colors.redAccent,),
+      home: const MainScreen(color1: Colors.redAccent,),
     );
   }
 }

@@ -40,6 +40,5 @@ extension WidgetSizesExtension on WidgetSizes{
         return 35;
         break;
     }
-
   }
 }
