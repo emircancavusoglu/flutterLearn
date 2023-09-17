@@ -49,9 +49,34 @@ class _InvestmentAppState extends State<InvestmentApp> {
                 label: const Text("Transfer"),style: TextButton.styleFrom(backgroundColor: Colors.grey),),
           ],
         ),
+         const SizedBox(height: 20,),
+         Container(
+           margin: const EdgeInsets.only(right: 280),
+             child: const Text("Transactions",style: TextStyle(
+               fontSize: 17
+             ),)),
         ],
       ),
-
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            label:'',
+            icon: Icon(Icons.home),
+            ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.change_circle),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.settings),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(Icons.cloud_download_rounded),
+          ),
+        ],
+      ),
     );
   }
 }
