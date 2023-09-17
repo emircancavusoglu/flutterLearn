@@ -52,15 +52,142 @@ class _InvestmentAppState extends State<InvestmentApp> {
             ),
             const SizedBox(width: 10,),
             ElevatedButton.icon(onPressed: (){}, icon: const Icon(Icons.currency_exchange_sharp),
-                label: const Text("Transfer"),style: TextButton.styleFrom(backgroundColor: Colors.grey),),
+              label: const Text("Transfer"),style:
+              TextButton.styleFrom(backgroundColor: Colors.grey),
+            ),
           ],
         ),
          const SizedBox(height: 20,),
          Container(
            margin: const EdgeInsets.only(right: 280),
-             child: const Text("Transactions",style: TextStyle(
-               fontSize: 17
-             ),)),
+             child: const Text("Transactions",style: TextStyle(fontSize: 17),
+             ),
+         ),
+          const SizedBox(height: 20,),
+          Row(
+            children: [
+              const Padding(padding: EdgeInsets.only(left: 10)),
+              ClipOval(
+                child: Image.network('https://randomuser.me/api/portraits/men/66.jpg',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Bank Bca")),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Top Up",
+                      style: TextStyle(color: Colors.grey) ,)),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const Padding(padding: EdgeInsets.only(top: 30)),
+          Row(
+            children: [
+              const Padding(padding: EdgeInsets.only(left: 10)),
+              ClipOval(
+                child: Image.network('https://randomuser.me/api/portraits/men/66.jpg',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Bank Bca")),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Top Up",
+                      style: TextStyle(color: Colors.grey) ,)),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const Padding(padding: EdgeInsets.only(top: 30)),
+          Row(
+            children: [
+              const Padding(padding: EdgeInsets.only(left: 10)),
+              ClipOval(
+                child: Image.network('https://randomuser.me/api/portraits/men/66.jpg',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Bank Bca")),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Top Up",
+                      style: TextStyle(color: Colors.grey) ,)),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const Padding(padding: EdgeInsets.only(top: 30)),
+          Row(
+            children: [
+              const Padding(padding: EdgeInsets.only(left: 10)),
+              ClipOval(
+                child: Image.network('https://randomuser.me/api/portraits/men/66.jpg',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Bank Bca")),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Top Up",
+                      style: TextStyle(color: Colors.grey) ,)),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const Padding(padding: EdgeInsets.only(top: 30)),
+          Row(
+            children: [
+              const Padding(padding: EdgeInsets.only(left: 10)),
+              ClipOval(
+                child: Image.network('https://randomuser.me/api/portraits/men/66.jpg',
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Bank Bca")),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Title(color: Colors.white, child: const Text("Top Up",
+                      style: TextStyle(color: Colors.grey) ,)),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
