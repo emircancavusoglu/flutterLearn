@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterprojemm/core/bottom_navigation2.dart';
 import 'package:flutterprojemm/core/bottom_navigation_bar.dart';
 import 'package:flutterprojemm/core/example_2.dart';
-import 'package:flutterprojemm/core/investment_app_sample.dart';
 import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/model_view.dart';
