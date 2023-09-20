@@ -126,9 +126,6 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               ElevatedButton(onPressed: (){
                 navigateToWidget(context, const ServiceLearn());
               }, child: const Text("Post Model Advanced")),
-              ElevatedButton(onPressed: (){
-                navigateToWidget(context, const InvestmentApp());
-              }, child: const Text("Investment App")),
             ],
           ),
         ),
