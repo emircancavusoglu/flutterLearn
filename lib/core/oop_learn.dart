@@ -9,14 +9,14 @@ class FileDownloadException implements Exception{
 
 class FileDownload{
   void downloadItem(FileItem fileItem){
-    if(fileItem == null) throw Exception();
+    if(fileItem == null) throw FileDownloadException();
   }
 }
 
 class FileItem{
   final String name;
-  final File file;
+  final String filePath;
 
-  FileItem(this.name, this.file);
+  FileItem(this.name, this.filePath);
 
 }
