@@ -6,6 +6,7 @@ import 'package:flutterprojemm/core/list_view.dart';
 import 'package:flutterprojemm/core/list_view_builder.dart';
 import 'package:flutterprojemm/core/model_view.dart';
 import 'package:flutterprojemm/core/navigator.dart';
+import 'package:flutterprojemm/core/oop_learn_view.dart';
 import 'package:flutterprojemm/core/page_view_learn.dart';
 import 'package:flutterprojemm/core/post_view.dart';
 import 'package:flutterprojemm/core/text_field_learn.dart';
@@ -125,6 +126,10 @@ class _MainScreenState extends State<MainScreen> with NavigatorManager{
               ElevatedButton(onPressed: (){
                 navigateToWidget(context, const ServiceLearn());
               }, child: const Text("Post Model Advanced")),
+
+              ElevatedButton(onPressed: (){
+                navigateToWidget(context, const OopLearnView());
+              }, child: const Text("Oop Learn View")),
             ],
           ),
         ),
